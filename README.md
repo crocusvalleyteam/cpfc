@@ -1,3 +1,5 @@
+https://travis-ci.org/thecroydonproject/thecroydonproject.svg?branch=master
+
 ### thecroydonproject
 
 the golang and aws croydon group consist of punch of local techies who decided to play thier part in making croydon the next big thing.  

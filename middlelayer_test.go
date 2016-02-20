@@ -1,22 +1,38 @@
 package main
 
 import (
-	//	"fmt"
+	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
-	//	"os"
-	//	"strings"
-	"encoding/json"
-	"fmt"
 	"testing"
 )
 
-var expected = `{"1":{"Productname":"sample"}}`
+var testdata = map[string]Product{
 
-func Test(t *testing.T) {
+	"1": Product{Productname: "tree"},
+	"2": Product{Productname: "chair"},
+	"3": Product{Productname: "coffee"},
+	"4": Product{Productname: "bread"},
+	"5": Product{Productname: "suger"},
+}
 
-	//mock server
+//Test_returnallproducts to test the return the list rest service
+//the test is simple. it check, using a mock server, if a known json is returned
+//the key to this test in the list router of findallproducts is used
+func Test_returnallproducts(t *testing.T) {
+
+	//first covert test data into json string
+	testdatabyte, err := json.Marshal(testdata)
+	if err != nil {
+
+		t.Fatal("failed to marshal test data")
+	}
+	expected := string(testdatabyte)
+
+	//mock server with router pointing to func to be tested
+
 	router := prod.router()
 	server := httptest.NewServer(router)
 	defer server.Close()
@@ -26,12 +42,9 @@ func Test(t *testing.T) {
 
 	resp, err := http.Get(server.URL + "/list/")
 
-	fmt.Printf("%v", resp)
-
 	if err != nil {
 
 		t.Fatal("cant finde the server")
-
 	}
 
 	if resp.StatusCode != 200 {
@@ -43,28 +56,23 @@ func Test(t *testing.T) {
 
 	if err != nil {
 
-		t.Fatal("cant read the body")
-
+		t.Fatal("cant read the body of the response")
 	}
 
+	//if all ok  read the body into json
 	data := new(Product)
-
 	err = json.Unmarshal(outputinbytes, &data)
-
 	if err != nil {
 
 		t.Fatal("cant retrieve json")
 	}
-
-	fmt.Println(data)
-
 	outstring := string(outputinbytes)
 
+	//check if input and output are ok
 	if outstring != expected {
 
 		fmt.Printf("%q", outstring)
 		t.Fatal("cant read the body")
 
 	}
-
 }

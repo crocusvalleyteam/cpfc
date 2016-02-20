@@ -14,7 +14,14 @@ type Product struct {
 
 var prod = new(Product)
 
-var sampleproducts = map[string]Product{"1": Product{Productname: "sample"}}
+var sampleproducts = map[string]Product{
+
+	"1": Product{Productname: "tree"},
+	"2": Product{Productname: "chair"},
+	"3": Product{Productname: "coffee"},
+	"4": Product{Productname: "bread"},
+	"5": Product{Productname: "suger"},
+}
 
 func main() {
 

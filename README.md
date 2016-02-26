@@ -68,5 +68,5 @@ the application will consist of;
 
 
 
-![Image](https://github.com/thecroydonproject/thecroydonproject/blob/master/thecroydonproject.png?raw=true)
+![Image](https://github.com/thecroydonproject/thecroydonproject/blob/master/thecroydonproject.png?raw=true) {width=200px height=200px}
 

@@ -54,19 +54,20 @@ the idea is to do  4 things;
 
 #### the picture 
 
-we like to communicate in pictures : see it 
+the diagram below shows the concept. 
 
 ##### The application
 
 
 the application will consist of;
 
-1) postgres database to hold historical results of the best club in the world     
+1) postgres database to hold historical game results of the best club in the world **Crystal palace fc**  
 2) A restfull service to serve all or selected game stats (season, period, datae, kick-off time, home or away, opponent, reuslt at halftime and final score)   
 3) a middle layer  to provide some-logic to mauniplute the data  
 4) frontend to display the results  
 
 
 
-![Image](https://github.com/thecroydonproject/thecroydonproject/blob/master/thecroydonproject.png?raw=true) {width=200px height=200px}
+![Image](https://github.com/thecroydonproject/thecroydonproject/blob/master/thecroydonproject.png?raw=true) 
 
+  

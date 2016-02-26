@@ -104,7 +104,7 @@ func ArticlePost(c *gin.Context) {
 
 func initDb() *gorp.DbMap {
 
-	dbUrl := os.Getenv("DATABASE_URL_THECROYDONPROJECT")
+	dbUrl := os.Getenv("DATABASE_URL_THECROYDONPROJECT") //export DATABASE_URL_THECROYDONPROJECT="dbname=databasename user=databaseusername password=password host=localhost port=15432 sslmode=disable"
 
 	fmt.Println("DB URL Connection is --> " + dbUrl)
 

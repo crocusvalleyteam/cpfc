@@ -44,7 +44,7 @@ func Test_returnallproducts(t *testing.T) {
 
 	if err != nil {
 
-		t.Fatal("cant finde the server")
+		t.Fatal("cant find the server")
 	}
 
 	if resp.StatusCode != 200 {

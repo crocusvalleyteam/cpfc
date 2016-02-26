@@ -1,5 +1,10 @@
 
 
+![Image](https://github.com/thecroydonproject/thecroydonproject/blob/master/Eagles.jpg?raw=true)
+
+
+
+
 ### thecroydonproject 
 
 [![Build Status](https://travis-ci.org/thecroydonproject/thecroydonproject.svg?branch=master)](https://travis-ci.org/thecroydonproject/thecroydonproject)

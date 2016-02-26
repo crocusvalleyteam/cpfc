@@ -31,10 +31,10 @@ Thecorydonproject project is the group's idea to build something,   the project 
 
 the application will consist;
 
-1) postgres database to hold historical results of the best club in the world 
-2) A restfull service to serve all or selected game stats (season, period, datae, kick-off time, home or away, opponent, reuslt at halftime and final score)
-3) a middle layer  to provide some-logic to mauniplute the data
-4) frontend to display the results
+1) postgres database to hold historical results of the best club in the world     
+2) A restfull service to serve all or selected game stats (season, period, datae, kick-off time, home or away, opponent, reuslt at halftime and final score)   
+3) a middle layer  to provide some-logic to mauniplute the data  
+4) frontend to display the results  
 
 
 

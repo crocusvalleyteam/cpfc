@@ -46,10 +46,11 @@ the idea is to do  4 things;
  
 #### outcome:  
 
-1) learn
-2) play
-3) build
-4) teach others
+1) learn  
+2) play  
+3) build  
+4) teach others 
+5) help local start-ups
 
 
 #### the picture 

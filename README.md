@@ -1,6 +1,6 @@
 
 
-![Image](https://github.com/thecroydonproject/thecroydonproject/blob/master/Eagles.jpg?raw=true) ![Image](https://github.com/thecroydonproject/thecroydonproject/blob/master/croydontechcity.jpg?raw=true)
+![Image](https://github.com/thecroydonproject/thecroydonproject/blob/master/Eagles.jpg?raw=true) ![Image](https://github.com/thecroydonproject/thecroydonproject/blob/master/croydontechcity.jpg?raw=true)   
 
 
 
@@ -8,7 +8,7 @@
 
 ### thecroydonproject 
 
-[![Build Status](https://travis-ci.org/thecroydonproject/thecroydonproject.svg?branch=master)](https://travis-ci.org/thecroydonproject/thecroydonproject)        [![Coverage Status](https://coveralls.io/repos/github/thecroydonproject/thecroydonproject/badge.svg?branch=master)](https://coveralls.io/github/thecroydonproject/thecroydonproject?branch=master)
+[![Build Status](https://travis-ci.org/thecroydonproject/thecroydonproject.svg?branch=master)](https://travis-ci.org/thecroydonproject/thecroydonproject)        [![Coverage Status](https://coveralls.io/repos/github/thecroydonproject/thecroydonproject/badge.svg?branch=master)](https://coveralls.io/github/thecroydonproject/thecroydonproject?branch=master)   [![codecov.io](https://codecov.io/github/thecroydonproject/thecroydonproject/coverage.svg?branch=master)](https://codecov.io/github/thecroydonproject/thecroydonproject?branch=master)
 
 
 #### intro  

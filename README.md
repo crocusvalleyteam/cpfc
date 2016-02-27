@@ -8,7 +8,7 @@
 
 ### thecroydonproject 
 
-[![Build Status](https://travis-ci.org/thecroydonproject/thecroydonproject.svg?branch=master)](https://travis-ci.org/thecroydonproject/thecroydonproject)
+[![Build Status](https://travis-ci.org/thecroydonproject/thecroydonproject.svg?branch=master)](https://travis-ci.org/thecroydonproject/thecroydonproject) [![Coverage Status](https://coveralls.io/repos/github/thecroydonproject/thecroydonproject/badge.svg?branch=master)](https://coveralls.io/github/thecroydonproject/thecroydonproject?branch=master)
 
 
 #### intro  

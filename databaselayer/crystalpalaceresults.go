@@ -27,9 +27,22 @@ type Result struct {
 	Resultsfulltime string
 }
 
+//intDb()
+//in development use vagrant and
+//$vagarant ssh to access the vm
+//$sudo su postgres
+//$psql 'dbusernamae'
+//use psql
+// if using the digital platform container do the following
+//1) ssh in droplet as root@droplet public IP
+//2) check if a container is running
+// 3)  run container  $ docker run -d -P --name db2 abdul3/dbcontainer
+// 4) check if the db is up and connect from host and from $psql -h localhost -p 32774 -d docker -U docker --password {the port is random allocation}
+//5) run curl test and check db
+
 func initDb() *gorp.DbMap {
 
-	dbUrl := os.Getenv("DATABASE_URL_THECROYDONPROJECT") //export DATABASE_URL_THECROYDONPROJECT="dbname=databasename user=databaseusername password=password host=localhost port=15432 sslmode=disable"
+	dbUrl := os.Getenv("DATABASE_URL_DOCKER") //export DATABASE_URL_THECROYDONPROJECT="dbname=databasename user=databaseusername password=password host=localhost port=15432 sslmode=disable"
 
 	fmt.Println("DB URL Connection is --> " + dbUrl)
 
@@ -39,7 +52,7 @@ func initDb() *gorp.DbMap {
 	// construct a gorp DbMap
 	dbmap := &gorp.DbMap{Db: db, Dialect: gorp.PostgresDialect{}}
 
-	dbmap.AddTableWithName(Result{}, "eagles1").SetKeys(true, "Id")
+	dbmap.AddTableWithName(Result{}, "eagles2").SetKeys(true, "Id")
 	err = dbmap.CreateTablesIfNotExists()
 	checkErr(err, "Create tables failed")
 

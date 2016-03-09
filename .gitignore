@@ -1,2 +1,4 @@
 /databaselayer/passportapplication.json
 /.idea
+/docker
+/docker/Dockerfile

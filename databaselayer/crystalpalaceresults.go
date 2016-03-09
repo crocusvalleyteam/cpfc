@@ -12,8 +12,11 @@ import (
 	"time"
 )
 
+//establish connection to db or fail early
 var dbmap = initDb()
 
+//to hold football match results
+//
 type Result struct {
 	Id              int64 `db:"result_id"`
 	Created         int64
@@ -38,7 +41,7 @@ type Result struct {
 //2) check if a container is running
 // 3)  run container  $ docker run -d -P --name db2 abdul3/dbcontainer
 // 4) check if the db is up and connect from host and from $psql -h localhost -p 32774 -d docker -U docker --password {the port is random allocation}
-//5) run curl test and check db
+//5) run curl to test restful services and and check db
 
 func initDb() *gorp.DbMap {
 
@@ -59,6 +62,7 @@ func initDb() *gorp.DbMap {
 	return dbmap
 }
 
+//checkErr is a helper function to deal with errors
 func checkErr(err error, msg string) {
 	if err != nil {
 		//log.Fatalln(msg, err)
@@ -68,8 +72,10 @@ func checkErr(err error, msg string) {
 
 }
 
+//main is programme entry point
 func main() {
 
+	//defer connection to database until all db operations are completed
 	defer dbmap.Db.Close()
 	router := Router()
 	router.Run(":8000")
@@ -85,6 +91,7 @@ func Router() *gin.Engine {
 	return router
 }
 
+//createresultentry creates database entry
 func createresultentry(season, round, date, kickofftime, awayorhome, opponent, resulthalftime, resultfultime string) Result {
 
 	result := Result{
@@ -105,6 +112,7 @@ func createresultentry(season, round, date, kickofftime, awayorhome, opponent, r
 	return result
 }
 
+//postresultentry maps post data to Result construct
 func postresultentry(c *gin.Context) {
 
 	var json Result
@@ -113,6 +121,7 @@ func postresultentry(c *gin.Context) {
 
 	result := createresultentry(json.Season, json.Round, json.Date, json.Kickofftime, json.AwayorHome, json.Oppenent, json.Resultshalftime, json.Resultsfulltime)
 
+	//compare db entry and post data
 	if result.Season == json.Season {
 		c.JSON(201, result)
 	} else {

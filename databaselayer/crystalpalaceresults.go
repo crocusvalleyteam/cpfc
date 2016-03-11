@@ -15,8 +15,6 @@ import (
 //establish connection to db or fail early
 var dbmap = initDb()
 
-
-
 //to hold football match results
 //
 type Result struct {
@@ -41,9 +39,11 @@ type Result struct {
 // if using the digital platform container do the following
 //1) ssh in droplet as root@droplet public IP
 //2) check if a container is running
-// 3)  run container  $ docker run -d -P --name db2 abdul3/dbcontainer
-// 4) check if the db is up and connect from host and from $psql -h localhost -p 32774 -d docker -U docker --password {the port is random allocation}
+// 3)  run container  $ docker run -d -p 3542:3542 --name cpfc postgres
+// 4) check if the db is up and connect from host and from $psql -h localhost -p 3542 --U postgres --password {default password is password}
 //5) run curl to test restful services and and check db
+//6) connect to postgres db \connect postgres and check table is created '\dt'
+//this all experimental and credentials will be fixed
 
 func initDb() *gorp.DbMap {
 

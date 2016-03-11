@@ -15,6 +15,8 @@ import (
 //establish connection to db or fail early
 var dbmap = initDb()
 
+
+
 //to hold football match results
 //
 type Result struct {

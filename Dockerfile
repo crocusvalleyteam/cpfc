@@ -1,5 +1,5 @@
 FROM golang
-RUN cp  cpfcddbservice.go /go
+ADD . /go
 RUN go get
 RUN go install cpfcddbservice.go
 ENTRYPOINT /go/bin/cpfcddbservice

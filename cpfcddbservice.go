@@ -30,7 +30,7 @@ type Result struct {
 	Resultsfulltime string
 }
 
-//intDb()
+//intDb()  -start
 //in development use vagrant and
 //$vagarant ssh to access the vm
 //$sudo su postgres

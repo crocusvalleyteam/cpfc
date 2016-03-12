@@ -3,7 +3,7 @@
 FROM golang
 
 # Copy the local package files to the container's workspace.
-RUN clone github.com/Abdul2/cpfc-dbservice
+RUN git clone github.com/Abdul2/cpfc-dbservice
 RUN go get github.com/coopernurse/gorp
 RUN go get github.com/lib/pq
 RUN go get github.com/gin-gonic/gin

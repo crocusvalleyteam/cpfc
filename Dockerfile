@@ -1,10 +1,21 @@
+# Start from a Debian image with the latest version of Go installed
+# and a workspace (GOPATH) configured at /go.
 FROM golang
-ADD . /go
-RUN go get gopkg.in/gorp.v1
+
+# Copy the local package files to the container's workspace.
+RUN go get github.com/Abdul2/cpfc
+RUN go get github.com/coopernurse/gorp
 RUN go get github.com/lib/pq
 RUN go get github.com/gin-gonic/gin
 RUN go get github.com/tools/godep
-RUN godep save
-RUN go install cpfcddbservice.go
-ENTRYPOINT /go/bin/cpfcddbservice
-EXPOSE 8000
+
+# Build the outyet command inside the container.
+# (You may fetch or manage dependencies here,
+# either manually or with a tool like "godep".)
+RUN go install github.com/Abdul2/cpfc
+.
+ENTRYPOINT /go/bin/cpfc
+
+# Document that the service listens on port 8080.
+EXPOSE 8080
+

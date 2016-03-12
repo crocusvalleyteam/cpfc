@@ -15,7 +15,7 @@ import (
 //establish connection to db or fail early
 var dbmap = initDb()
 
-//to hold football match results
+//to hold football match result
 //
 type Result struct {
 	Id              int64 `db:"result_id"`

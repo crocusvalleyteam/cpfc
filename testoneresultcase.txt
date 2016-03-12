@@ -1,0 +1,1 @@
+{\"AwayorHome\":\"A\",\"Date\":\"10-09-1946\",\"Kickofftime\":\"13:00\",\"Oppenent\":\"Arsenal\",\"Resultsfulltime\":\"2:2\"\,\"Resultshalftime\":\"1:2\",\"Round\":\"15\",\"Season\":\"1945/46\"

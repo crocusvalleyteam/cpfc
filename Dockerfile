@@ -1,3 +1,4 @@
 FROM golang:1.3-onbuild
-EXPOSE 8080
+WORKDIR /usr/src/app
+EXPOSE 8000
 

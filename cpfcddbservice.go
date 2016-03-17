@@ -86,7 +86,7 @@ func main() {
 func Router() *gin.Engine {
 
 	router := gin.Default()
-	router.GET("/results", allresults)        //curl -i http://localhost:8000/results
+	router.GET("/results", allresults)        //curl -i http://localhost:8000/results. in container curl -i http://192.168.99.101:3000/results
 	router.POST("/result", postresultentry)   //	curl -i -X POST -H "Content-Type: application/json" -d "{\"Season\":\"1945/46\",\"Round\":\"15\",\"Date\":\"10-09-1946\",\"Kickofftime\":\"13:00\",\"AwayorHome\":\"A\",\"Oppenent\":\"Arsenal\",\"Resultshalftime\":\"1:2\",\"Resultsfulltime\":\"2:2\"}" http://localhost:8000/result
 	router.GET("/results/:id", resultdetails) //	//curl -i http://localhost:8000/results/{result number}
 

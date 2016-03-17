@@ -1,0 +1,8 @@
+webservice:
+    build: .
+    ports:
+        - "3000:8000"
+    environment:
+        DATABASE_URL_DOCKER: "dbname=databasename user=databaseusername password=password host=localhost port=15432 sslmode=disable"
+    volumes:
+        - .:/usr/src/app

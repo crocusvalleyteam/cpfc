@@ -144,23 +144,23 @@ func postresultentry(c *gin.Context) {
 
 	c.JSON(201, result)
 
+
+	func getresult(result_id int) Result {
+
+		result := Result{}
+		err := dbmap.SelectOne(&result, "select * from eagles2 where result_id=$1", result_id)
+		checkErr(err, "SelectOne failed")
+		return result
+	}
+
+	func resultdetails(c *gin.Context) {
+		result_id := c.Params.ByName("id")
+		r_id, _ := strconv.Atoi(result_id)
+		result := getresult(r_id)
+
+		content := gin.H{"Season": result.Season, "Round": result.Round, "Date": result.Date, "Kickofftime": result.Kickofftime, "AwayorHome": result.AwayorHome, "Oppenent": result.Oppenent, "Resultshalftime": result.Resultshalftime, "Resultsfulltime": result.Resultsfulltime}
+
 }
-
-func getresult(result_id int) Result {
-
-	result := Result{}
-	err := dbmap.SelectOne(&result, "select * from eagles2 where result_id=$1", result_id)
-	checkErr(err, "SelectOne failed")
-	return result
-}
-
-func resultdetails(c *gin.Context) {
-	result_id := c.Params.ByName("id")
-	r_id, _ := strconv.Atoi(result_id)
-	result := getresult(r_id)
-
-	content := gin.H{"Season": result.Season, "Round": result.Round, "Date": result.Date, "Kickofftime": result.Kickofftime, "AwayorHome": result.AwayorHome, "Oppenent": result.Oppenent, "Resultshalftime": result.Resultshalftime, "Resultsfulltime": result.Resultsfulltime}
-
 	c.JSON(200, content)
 }
 

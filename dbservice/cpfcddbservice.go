@@ -48,18 +48,18 @@ type Result struct {
 func initDb() *gorp.DbMap {
 
 
-/*
+
 dbUrl := fmt.Sprintf(
 "user=%s dbname=%s password=%s host=%s port=%s sslmode=disable",
 "postgres",
 "postgres",
-os.Getenv("password"),
-os.Getenv("host"),
-os.Getenv("port"),
+ "password",
+os.Getenv("POSTGRES_1_PORT_5432_TCP_ADDR"),
+os.Getenv("POSTGRES_PORT_5432_TCP_PORT"),
 )
 
-*/
-	dbUrl := os.Getenv("e") //export DATABASE_URL_THECROYDONPROJECT="dbname=databasename user=databaseusername password=password host=localhost port=15432 sslmode=disable"
+
+//	dbUrl := os.Getenv("e") //export DATABASE_URL_THECROYDONPROJECT="dbname=databasename user=databaseusername password=password host=localhost port=15432 sslmode=disable"
 
 	fmt.Println("DB URL Connection is --> " + dbUrl)
 
@@ -149,7 +149,7 @@ func postresultentry(c *gin.Context) {
 func getresult(result_id int) Result {
 
 	result := Result{}
-	err := dbmap.SelectOne(&result, "select * from eagles1 where result_id=$1", result_id)
+	err := dbmap.SelectOne(&result, "select * from eagles2 where result_id=$1", result_id)
 	checkErr(err, "SelectOne failed")
 	return result
 }
@@ -168,7 +168,7 @@ func allresults(c *gin.Context) {
 
 	var result []Result
 
-	_, err := dbmap.Select(&result, "select * from eagles1 order by result_id")
+	_, err := dbmap.Select(&result, "select * from eagles2 order by result_id")
 
 	checkErr(err, "Select failed")
 

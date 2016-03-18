@@ -1,44 +1,44 @@
-# cpfc-dbservice
+
+# Introduction 
 
 
+This module is part of the thecroydonproject project, it presents a restful interface to access crystal palace football club scores.   
 
-cpfcdbservice provides access to Crystal Palace FC results through a simple RESTful Web Services. 
+The module consist of 4 files :
 
-  
+## 1) ReadMe.md  
 
-## services 
-
-
-1)  GET/results
-
-    returns a json  of all results
-    
-    to test, run 
-    
-```     curl -i http://localhost:8000/results
-```  
-
-2)  GET/results:id
-
-    returns a json object of results of game with provided id
-    
-    to test, run 
-    
-```     curl -i http://localhost:8000/results:id
-```  
-
-3)  POST/results
-
-    given a json object, the POST service writes into into the db
-    
-    to test, run 
-    
-```     curl -i -X POST -H "Content-Type: application/json" -d "{\"Season\":\"1945/46\",\"Round\":\"15\",\"Date\":\"10-09-1946\",\"Kickofftime\":\"13:00\",
-        \"AwayorHome\":\"A\",\"Oppenent\":\"Arsenal\",\"Resultshalftime\":\"1:2\",\"Resultsfulltime\":\"2:2\"}" http://localhost:8000/result
-``` 
+This document.
 
 
-## docker container
+## 2) cpfcdbaseservice.go 
 
-```docker pull crocusvalley/cpfc-dbservice
-```
+
+    GET     /results            - Returns a json result of all scores
+	POST    /result             - Commits to db the supplied score
+	GET     /results/id         - retrieves the given record id
+	
+	
+## 3) Dockerfile  
+
+creates a container with the cpfcdbaseservice.go 
+
+## 4) docekr-compose.yml
+
+
+to run the two containers and stand up the environment 
+
+## to run
+
+    ```$ docker-compose up``` 
+
+##to test 
+ 
+ ```curl -i http://192.168.99.100:3000/results```
+ 
+ ```curl -i -X POST -H "Content-Type: application/json" -d "{\"Season\":\"1945/46\",\"Round\":\"15\",\"Date\":\"10-09-1946\",\"Kickofftime\":\"13:00\",\"AwayorHome\":\"A\",\"Oppenent\":\"Arsenal\",\"Resultshalftime\":\"1:2\",\"Resultsfulltime\":\"2:2\"}" http://192.168.99.100:3000/result```
+ 
+ ```curl -i http://192.168.99.100:3000/results/1```
+
+ 
+

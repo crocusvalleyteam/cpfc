@@ -47,7 +47,19 @@ type Result struct {
 
 func initDb() *gorp.DbMap {
 
-	dbUrl := os.Getenv("DATABASE_URL_DOCKER") //export DATABASE_URL_THECROYDONPROJECT="dbname=databasename user=databaseusername password=password host=localhost port=15432 sslmode=disable"
+
+/*
+dbUrl := fmt.Sprintf(
+"user=%s dbname=%s password=%s host=%s port=%s sslmode=disable",
+"postgres",
+"postgres",
+os.Getenv("password"),
+os.Getenv("host"),
+os.Getenv("port"),
+)
+
+*/
+	dbUrl := os.Getenv("e") //export DATABASE_URL_THECROYDONPROJECT="dbname=databasename user=databaseusername password=password host=localhost port=15432 sslmode=disable"
 
 	fmt.Println("DB URL Connection is --> " + dbUrl)
 
